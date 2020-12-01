@@ -40,7 +40,7 @@ const promptUser = () =>
       type: 'list',
       name: 'license',
       message: 'Select the type of license for your project',
-      choices: ['Apache 2.0', 'Boost']
+      choices: ['Apache 2.0', 'Boost', 'Creative Commons', 'Eclipse', 'GNU', 'MIT']
     },
     {
       type: 'input',
@@ -63,6 +63,22 @@ const badges = [
     Type: 'Boost',
     Badge: '[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)',
   },
+  {
+    Type: 'Creative Commons',
+    Badge: '[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)',
+  },
+  {
+    Type: 'Eclipse',
+    Badge: '[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)',
+  },
+  {
+    Type: 'GNU',
+    Badge: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
+  },
+  {
+    Type: 'MIT',
+    Badge: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
+  },
 ]
 
 const badgeReturn = (input) => {
@@ -75,15 +91,20 @@ const badgeReturn = (input) => {
       }
     }
   }
-  
+
   return badgeID
 }
 // function to write README file
 function generateReMe(answers) {
 return `${badgeReturn(answers.license)}
 ## Table of Contents
-
-#${answers.title}
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [Testing](#testing)
+- [Questions](#questions)
+# ${answers.title}
 
 ## Description
 ${answers.description}
@@ -92,13 +113,16 @@ ${answers.description}
 ${answers.installation}
 
 ## Usage
+${answers.usage}
 
 ## Contribution
+${answers.contribution}
 
 ## Testing
+${answers.testing}
 
 ## Questions
-Github: ${answers.github}
+Github: ${answers.github} <br/>
 Email: ${answers.email}`
 
 }
