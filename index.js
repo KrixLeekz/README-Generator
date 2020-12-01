@@ -40,16 +40,7 @@ const promptUser = () =>
       type: 'list',
       name: 'license',
       message: 'Select the type of license for your project',
-      choices: [
-        {
-          Type: 'Apache 2.0',
-          Badge: '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
-        },
-        {
-          Type: 'Boost',
-          Badge: '[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)',
-        },
-    ]
+      choices: ['Apache 2.0', 'Boost']
     },
     {
       type: 'input',
@@ -61,11 +52,35 @@ const promptUser = () =>
       name: 'email',
       message: 'What is your Email address?',
     },
-  ])
+])
 
+const badges = [
+  {
+    Type: 'Apache 2.0',
+    Badge: '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
+  },
+  {
+    Type: 'Boost',
+    Badge: '[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)',
+  },
+]
+
+const badgeReturn = (input) => {
+  let badgeID = "default"
+
+  for(let i = 0; i < badges.length; i++){
+    for(const key in badges[i]){
+      if (JSON.stringify(input) === JSON.stringify(badges[i][key])){
+        badgeID = badges[i].Badge
+      }
+    }
+  }
+  
+  return badgeID
+}
 // function to write README file
 function generateReMe(answers) {
-return `${answers.license}
+return `${badgeReturn(answers.license)}
 ## Table of Contents
 
 #${answers.title}
