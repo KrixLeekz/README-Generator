@@ -83,7 +83,7 @@ const badges = [
 
 const badgeReturn = (input) => {
   let badgeID = "default"
-
+  //Grabs the key value in the array of badge objects and returns the link to the badge
   for(let i = 0; i < badges.length; i++){
     for(const key in badges[i]){
       if (JSON.stringify(input) === JSON.stringify(badges[i][key])){
@@ -120,6 +120,9 @@ ${answers.contribution}
 
 ## Testing
 ${answers.testing}
+
+## License
+This project is licensed under: 
 
 ## Questions
 Github: ${answers.github} <br/>

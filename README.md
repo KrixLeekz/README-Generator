@@ -1,26 +1,31 @@
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
-- [Description](#description)
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [Testing](#testing)
 - [Questions](#questions)
-# ty
+# ReadMe Generator
 
 ## Description
-ry
+A generator for README files
 
 ## Installation
-yt
+Download the project from github and open in VScode
 
 ## Usage
-er
+Generating README's
 
 ## Contribution
-ye
+Anyone can contribute
 
 ## Testing
-rt
+Run it in the terminal with Node
+
+## License
+This project is licensed under: 
 
 ## Questions
-Github: ret <br/>
-Email: tr
+Github: KrixLeekz <br/>
+Email: chrislyko@gmail.com
